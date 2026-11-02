@@ -18,6 +18,8 @@ python -m venv .venv
 python -m pip install pytest
 pytest -q
 python demo.py
+# Explicit, consent-based local check
+PYTHONPATH=. python device_check.py --live-tv
 ```
 
 ## Result meanings
@@ -29,6 +31,8 @@ python demo.py
 ## Safety boundary
 
 This is not an official TV Licensing checker. It does not look up personal accounts, accept payments, store addresses, process licence numbers or determine liability. Rules and fees can change, so users should confirm the result through official sources.
+
+The included `device_check.py` is intentionally not surveillance software. It asks the user to supply viewing facts and does not inspect applications, network traffic, cameras, microphones, device identifiers or licence databases. TV Licensing says its own detection equipment is used only under its lawful and proportionate enforcement process, and a private script cannot reproduce that authority or establish whether a specific household is licensed. See the official [TV Licensing privacy and security policy](https://www.tvlicensing.co.uk/privacy-security-policies) and [roles and responsibilities](https://www.tvlicensing.co.uk/about/our-roles-and-responsibilities-AB3).
 
 The link checker is deliberately conservative. A domain check is not proof that a page is safe; users should navigate independently from official GOV.UK or TV Licensing pages and never submit payment credentials through a suspicious message.
 

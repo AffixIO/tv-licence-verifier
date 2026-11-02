@@ -1,0 +1,8 @@
+[project]
+name = "affixio-tv-licence-verifier"
+version = "0.1.0"
+description = "A source-aware UK TV Licence eligibility and scam-safety verifier."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
